@@ -1,0 +1,6195 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Defined Robotics platform">
+      
+      
+      
+        <link rel="canonical" href="https://docs.definedrobotics.com/reference/api/cli/">
+      
+      
+        <link rel="prev" href="../compiler/">
+      
+      
+        <link rel="next" href="../../cli-commands/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>defined-cli - Defined Robotics Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <!-- Plausible Analytics -->
+  <script defer data-domain="docs.definedrobotics.com" src="https://analytics.cirrus.shreyasgokhale.com/js/script.js"></script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#defined-cli-api-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Defined Robotics Docs" class="md-header__button md-logo" aria-label="Defined Robotics Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Defined Robotics Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              defined-cli
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Defined-Robotics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Defined-Robotics
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Defined Robotics Docs" class="md-nav__button md-logo" aria-label="Defined Robotics Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Defined Robotics Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Defined-Robotics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Defined-Robotics
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/rdf-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RDF Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/task-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/verb-authoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verb Authoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/world-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    World System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/patrol-robot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patrol Robot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/starter-repo-walkthrough/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Starter Repo Walkthrough
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tutorials/custom-verb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Verb
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    defined-rdf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compiler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    defined-compiler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    defined-cli
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    defined-cli
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defined_cli.mission.session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        session
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="session">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session--flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DefinedSession
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DefinedSession">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.latest_readiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        latest_readiness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.connection_status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        connection_status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.mission_status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mission_status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.blackboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        blackboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.current_progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        current_progress
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.last_mission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        last_mission
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.last_error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        last_error
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.add_listener" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        add_listener
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.remove_listener" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        remove_listener
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        connect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.disconnect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        disconnect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.compile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.run_mission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        run_mission
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.stop_mission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stop_mission
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.restart_mission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        restart_mission
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.add_poi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        add_poi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.list_pois" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        list_pois
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.mark_poi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mark_poi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.publish_velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        publish_velocity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.emergency_stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        emergency_stop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defined_cli.mission.events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        events
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.events.ConnectionStatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ConnectionStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.events.MissionStatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MissionStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.events.SessionEvent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SessionEvent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#poi-resolver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POI Resolver
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defined_cli.mission.resolver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        resolver
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="resolver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.resolver--resolvedstepsparams-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        resolved"steps""params" == 1.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.resolver.ResolverError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResolverError
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.resolver.resolve_references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        resolve_references
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Store
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defined_cli.state.store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="store">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.store.StateStore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StateStore
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="StateStore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.store.StateStore.path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.store.StateStore.load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        load
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.store.StateStore.save" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        save
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blackboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blackboard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        blackboard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="blackboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blackboard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Blackboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.get" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        delete
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        list
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.set_poi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_poi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.get_poi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_poi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.list_pois" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        list_pois
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clear
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.clear_pois" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clear_pois
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.to_dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        to_dict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.from_dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        from_dict
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Models
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defined_cli.state.model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.model.RobotStatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RobotStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.model.RobotState" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RobotState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.model.WorldState" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WorldState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.model.MissionRecord" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MissionRecord
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.model.StateSnapshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StateSnapshot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="StateSnapshot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.model.StateSnapshot.to_dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        to_dict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.model.StateSnapshot.from_dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        from_dict
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#world-loader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        World Loader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defined_cli.state.world_loader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        world_loader
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="world_loader">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.world_loader.POIDefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POIDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.world_loader.SpawnPosition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SpawnPosition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.world_loader.SimEnvironment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SimEnvironment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.world_loader.ZoneDefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ZoneDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.world_loader.WorldDefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WorldDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.world_loader.load_world" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        load_world
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.world_loader.seed_blackboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        seed_blackboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cli-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defined_cli.mission.session" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        session
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="session">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session--flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DefinedSession
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="DefinedSession">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.latest_readiness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        latest_readiness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.connection_status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        connection_status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.mission_status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mission_status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        state
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.blackboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        blackboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.current_progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        current_progress
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.last_mission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        last_mission
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.last_error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        last_error
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.add_listener" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        add_listener
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.remove_listener" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        remove_listener
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        connect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.disconnect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        disconnect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.compile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.run_mission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        run_mission
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.stop_mission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        stop_mission
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.restart_mission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        restart_mission
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.add_poi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        add_poi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.list_pois" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        list_pois
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.mark_poi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mark_poi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.publish_velocity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        publish_velocity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.session.DefinedSession.emergency_stop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        emergency_stop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defined_cli.mission.events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        events
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.events.ConnectionStatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ConnectionStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.events.MissionStatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MissionStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.events.SessionEvent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SessionEvent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#poi-resolver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POI Resolver
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defined_cli.mission.resolver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        resolver
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="resolver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.resolver--resolvedstepsparams-15" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        resolved"steps""params" == 1.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.resolver.ResolverError" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ResolverError
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.mission.resolver.resolve_references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        resolve_references
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Store
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defined_cli.state.store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        store
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="store">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.store.StateStore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StateStore
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="StateStore">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.store.StateStore.path" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        path
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.store.StateStore.load" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        load
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.store.StateStore.save" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        save
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blackboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blackboard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        blackboard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="blackboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blackboard
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Blackboard">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.get" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.set" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        delete
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        list
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.set_poi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_poi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.get_poi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_poi
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.list_pois" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        list_pois
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clear
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.clear_pois" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clear_pois
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.to_dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        to_dict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.blackboard.Blackboard.from_dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        from_dict
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Models
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defined_cli.state.model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.model.RobotStatus" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RobotStatus
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.model.RobotState" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RobotState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.model.WorldState" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WorldState
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.model.MissionRecord" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MissionRecord
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.model.StateSnapshot" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StateSnapshot
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="StateSnapshot">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.model.StateSnapshot.to_dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        to_dict
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.model.StateSnapshot.from_dict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        from_dict
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#world-loader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        World Loader
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#defined_cli.state.world_loader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        world_loader
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="world_loader">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.world_loader.POIDefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POIDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.world_loader.SpawnPosition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SpawnPosition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.world_loader.SimEnvironment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SimEnvironment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.world_loader.ZoneDefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ZoneDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.world_loader.WorldDefinition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        WorldDefinition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.world_loader.load_world" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        load_world
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_cli.state.world_loader.seed_blackboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        seed_blackboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="defined-cli-api-reference">defined-cli API Reference<a class="headerlink" href="#defined-cli-api-reference" title="Permanent link">&para;</a></h1>
+<p>Mission control — DefinedSession, state management, events, and world model.</p>
+<h2 id="session">Session<a class="headerlink" href="#session" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="defined_cli.mission.session" class="doc doc-heading">
+            <code>session</code>
+
+
+<a href="#defined_cli.mission.session" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+        <p>DefinedSession — unified Python API for all robot interaction.</p>
+<p>Single entry point that replaces both Orchestrator (one-shot) and
+MissionController (persistent). Manages connection lifecycle, mission
+execution, state persistence, and event notification.</p>
+<p>This module has zero imports from click, rich, or textual.</p>
+<h4 id="defined_cli.mission.session--flow">Flow<a class="headerlink" href="#defined_cli.mission.session--flow" title="Permanent link">&para;</a></h4>
+<p><code>connect()</code>
+    DISCONNECTED → CONNECTING → CONNECTED (starts reconnect watchdog)</p>
+<p><code>run_mission(task, rdf)</code>
+    Sets COMPILING immediately (under lock), then spawns a daemon thread:
+      COMPILING → resolve POI references → compile YAML → BT XML
+      DEPLOYING → wait for executor IDLE heartbeat → deploy XML
+      RUNNING   → monitor /task_status until SUCCESS/FAILURE/timeout
+      SUCCEEDED / FAILED (saved to StateStore)</p>
+<p><code>stop_mission()</code>
+    Signals the daemon thread to abort; transition → FAILED.</p>
+<p><code>disconnect()</code>
+    Stops the watchdog, closes transport, sets DISCONNECTED.</p>
+<p>Usage (script):
+    session = DefinedSession(target=SimTarget(), transport=RosbridgeTransport(),
+                             store=StateStore(), compile_fn=compile_task)
+    session.connect()
+    session.add_poi("dock", 0.0, 0.0)
+    session.run_mission(Path("patrol.task.yaml"), Path("robot.rdf.yaml"))
+    session.disconnect()</p>
+<p>Usage (TUI):
+    app = DefinedApp(session)
+    app.run()</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="defined_cli.mission.session.DefinedSession" class="doc doc-heading">
+            <code>DefinedSession</code>
+
+
+<a href="#defined_cli.mission.session.DefinedSession" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Unified Python API for robot interaction.</p>
+<p>Manages the full lifecycle: connection, mission execution, state
+persistence, and event notification. Thread-safe.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>target</code>
+            </td>
+            <td>
+                  <code><span title="defined_cli.target.TargetBase">TargetBase</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Backend lifecycle manager (SimTarget, HwTarget).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>transport</code>
+            </td>
+            <td>
+                  <code><span title="defined_cli.transport.TransportBase">TransportBase</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Communication layer (RosbridgeTransport).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>store</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="StateStore (defined_cli.state.store.StateStore)" href="#defined_cli.state.store.StateStore">StateStore</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>State persistence (StateStore).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>compile_fn</code>
+            </td>
+            <td>
+                  <code><span title="collections.abc.Callable">Callable</span>[..., <span title="defined_cli.compiler.CompileResult">CompileResult</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Task compiler function (compile_task).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.latest_readiness" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">latest_readiness</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#defined_cli.mission.session.DefinedSession.latest_readiness" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Most recent readiness check result.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.connection_status" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">connection_status</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#defined_cli.mission.session.DefinedSession.connection_status" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Current transport connection state.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.mission_status" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">mission_status</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#defined_cli.mission.session.DefinedSession.mission_status" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Current mission execution state.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.state" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">state</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#defined_cli.mission.session.DefinedSession.state" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Current state snapshot (read-only copy).</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.blackboard" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">blackboard</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#defined_cli.mission.session.DefinedSession.blackboard" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Blackboard with current world state.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.current_progress" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">current_progress</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#defined_cli.mission.session.DefinedSession.current_progress" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Latest TaskProgress update, or None if idle.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.last_mission" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">last_mission</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#defined_cli.mission.session.DefinedSession.last_mission" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Most recently completed or active mission record.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.steps" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">steps</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#defined_cli.mission.session.DefinedSession.steps" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Steps from the most recently compiled mission.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.reports" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">reports</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#defined_cli.mission.session.DefinedSession.reports" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Recent report messages.</p>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.last_error" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">last_error</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#defined_cli.mission.session.DefinedSession.last_error" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Error from the most recent failed mission.</p>
+
+    </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.add_listener" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">add_listener</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span></code>
+
+<a href="#defined_cli.mission.session.DefinedSession.add_listener" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Register an event listener. Thread-safe.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.remove_listener" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">remove_listener</span><span class="p">(</span><span class="n">callback</span><span class="p">)</span></code>
+
+<a href="#defined_cli.mission.session.DefinedSession.remove_listener" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Unregister an event listener. Thread-safe.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.connect" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">connect</span><span class="p">()</span></code>
+
+<a href="#defined_cli.mission.session.DefinedSession.connect" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Start target (if needed), connect transport, start watchdog.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.disconnect" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">disconnect</span><span class="p">()</span></code>
+
+<a href="#defined_cli.mission.session.DefinedSession.disconnect" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Stop watchdog, disconnect transport, update state.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.compile" class="doc doc-heading">
+            <code class="highlight language-python"><span class="nb">compile</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">rdf</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">verbs_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#defined_cli.mission.session.DefinedSession.compile" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Compile a task YAML to BT XML. Works without connection.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.run_mission" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">run_mission</span><span class="p">(</span><span class="n">task</span><span class="p">,</span> <span class="n">rdf</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">verbs_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">_DEFAULT_TIMEOUT</span><span class="p">,</span> <span class="n">param_overrides</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#defined_cli.mission.session.DefinedSession.run_mission" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Compile, deploy, and monitor a mission. Non-blocking.</p>
+<p>Spawns a daemon thread. Use <code>mission_status</code> property to
+track progress. Events are emitted to listeners.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>param_overrides</code>
+            </td>
+            <td>
+                  <code><span title="dict">dict</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Key/value pairs that override matching params in
+every task step at compile time. E.g. <code>{"timeout": "120"}</code>
+overrides the <code>timeout</code> param on any step that declares it.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.stop_mission" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">stop_mission</span><span class="p">()</span></code>
+
+<a href="#defined_cli.mission.session.DefinedSession.stop_mission" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Stop the current mission gracefully. No-op if nothing running.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.restart_mission" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">restart_mission</span><span class="p">()</span></code>
+
+<a href="#defined_cli.mission.session.DefinedSession.restart_mission" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Re-run the last mission with the same arguments.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.add_poi" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">add_poi</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">poi_type</span><span class="o">=</span><span class="s1">&#39;static&#39;</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span></code>
+
+<a href="#defined_cli.mission.session.DefinedSession.add_poi" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Add or update a Point of Interest.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.list_pois" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">list_pois</span><span class="p">()</span></code>
+
+<a href="#defined_cli.mission.session.DefinedSession.list_pois" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return all POIs as a dict.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.mark_poi" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">mark_poi</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">poi_type</span><span class="o">=</span><span class="s1">&#39;static&#39;</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span></code>
+
+<a href="#defined_cli.mission.session.DefinedSession.mark_poi" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Mark the robot's current position as a named POI.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.publish_velocity" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">publish_velocity</span><span class="p">(</span><span class="n">linear_x</span><span class="p">,</span> <span class="n">angular_z</span><span class="p">)</span></code>
+
+<a href="#defined_cli.mission.session.DefinedSession.publish_velocity" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Publish a velocity command to /cmd_vel. No-op if not connected.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.mission.session.DefinedSession.emergency_stop" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">emergency_stop</span><span class="p">()</span></code>
+
+<a href="#defined_cli.mission.session.DefinedSession.emergency_stop" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Immediately halt all motion and abort any running mission.</p>
+<p>Publishes zero velocity to /cmd_vel, signals the mission thread to
+stop, and marks the mission as FAILED. Safe to call from any state.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="defined_cli.mission.events" class="doc doc-heading">
+            <code>events</code>
+
+
+<a href="#defined_cli.mission.events" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+        <p>Mission event types — connection states, mission states, and session events.</p>
+<p>Pure data types with no I/O, no CLI dependencies, and no side effects.
+Used by <code>DefinedSession</code> for lifecycle tracking and by TUI/scripts
+for observing state changes.</p>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="defined_cli.mission.events.ConnectionStatus" class="doc doc-heading">
+            <code>ConnectionStatus</code>
+
+
+<a href="#defined_cli.mission.events.ConnectionStatus" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="enum.Enum">Enum</span></code></p>
+
+
+
+        <p>Transport connection lifecycle states.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="defined_cli.mission.events.MissionStatus" class="doc doc-heading">
+            <code>MissionStatus</code>
+
+
+<a href="#defined_cli.mission.events.MissionStatus" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="enum.Enum">Enum</span></code></p>
+
+
+
+        <p>Mission execution lifecycle states.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="defined_cli.mission.events.SessionEvent" class="doc doc-heading">
+            <code>SessionEvent</code>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-dataclass"><code>dataclass</code></small>
+  </span>
+
+<a href="#defined_cli.mission.events.SessionEvent" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Structured event emitted by DefinedSession.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.mission.events.SessionEvent.timestamp">timestamp</span></code></td>
+            <td>
+                  <code><span title="datetime.datetime">datetime</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>When the event occurred (UTC).</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.mission.events.SessionEvent.category">category</span></code></td>
+            <td>
+                  <code><span title="typing.Literal">Literal</span>[&#39;connection&#39;, &#39;executor&#39;, &#39;mission&#39;, &#39;error&#39;, &#39;health&#39;]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Event category for filtering/routing.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.mission.events.SessionEvent.message">message</span></code></td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Human-readable description (Layer 1).</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.mission.events.SessionEvent.suggestion">suggestion</span></code></td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Actionable hint (Layer 2), or None.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.mission.events.SessionEvent.detail">detail</span></code></td>
+            <td>
+                  <code><span title="dict">dict</span>[<span title="str">str</span>, <span title="typing.Any">Any</span>] | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Structured data (Layer 3), or None.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="poi-resolver">POI Resolver<a class="headerlink" href="#poi-resolver" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="defined_cli.mission.resolver" class="doc doc-heading">
+            <code>resolver</code>
+
+
+<a href="#defined_cli.mission.resolver" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+        <p>POI reference resolver -- expands <code>$world.pois.X</code> in task dicts.</p>
+<p>Runs before the compiler. Walks task step params and replaces
+string references (<code>$world.pois.kitchen</code>) with concrete
+coordinate values from the Blackboard.</p>
+
+
+<details class="usage" open>
+  <summary>Usage</summary>
+  <p>from defined_cli.mission.resolver import resolve_references</p>
+<p>resolved = resolve_references(task_dict, blackboard)</p>
+<h3 id="defined_cli.mission.resolver--resolvedstepsparams-15">resolved["steps"][0]["params"]["x"] == 1.5<a class="headerlink" href="#defined_cli.mission.resolver--resolvedstepsparams-15" title="Permanent link">&para;</a></h3>
+</details>
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="defined_cli.mission.resolver.ResolverError" class="doc doc-heading">
+            <code>ResolverError</code>
+
+
+<a href="#defined_cli.mission.resolver.ResolverError" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="Exception">Exception</span></code></p>
+
+
+
+        <p>A POI reference in the task could not be resolved.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.mission.resolver.ResolverError.reference">reference</span></code></td>
+            <td>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The unresolved reference string (e.g. <code>"$world.pois.unknown"</code>).</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="defined_cli.mission.resolver.resolve_references" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">resolve_references</span><span class="p">(</span><span class="n">task_dict</span><span class="p">,</span> <span class="n">blackboard</span><span class="p">)</span></code>
+
+<a href="#defined_cli.mission.resolver.resolve_references" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Resolve all <code>$world.pois.X</code> references in a task dict.</p>
+<p>Returns a new dict (deep copy) with references replaced by
+concrete values. For <code>target</code> params pointing to a POI,
+expands the POI center into <code>x</code> and <code>y</code> coordinates.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>task_dict</code>
+            </td>
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Parsed task YAML (from <code>parser.load_task</code>).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>blackboard</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="Blackboard (defined_cli.state.blackboard.Blackboard)" href="#defined_cli.state.blackboard.Blackboard">Blackboard</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Blackboard containing POI data.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A new task dict with all references resolved.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="ResolverError (defined_cli.mission.resolver.ResolverError)" href="#defined_cli.mission.resolver.ResolverError">ResolverError</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If a referenced POI does not exist.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="state-store">State Store<a class="headerlink" href="#state-store" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="defined_cli.state.store" class="doc doc-heading">
+            <code>store</code>
+
+
+<a href="#defined_cli.state.store" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+        <p>State persistence -- atomic YAML read/write for robot state.</p>
+<p>Manages the <code>~/.defined/state.yaml</code> file. Writes are atomic
+(temp file + <code>os.replace</code>) to prevent corruption from crashes
+or concurrent access.</p>
+
+
+<details class="usage" open>
+  <summary>Usage</summary>
+  <p>from defined_cli.state.store import StateStore</p>
+<p>store = StateStore()
+snapshot = store.load()
+snapshot.robot.current = RobotStatus.IDLE
+store.save(snapshot)</p>
+</details>
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="defined_cli.state.store.StateStore" class="doc doc-heading">
+            <code>StateStore</code>
+
+
+<a href="#defined_cli.state.store.StateStore" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Single writer for <code>~/.defined/state.yaml</code>.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>path</code>
+            </td>
+            <td>
+                  <code><span title="pathlib.Path">Path</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Override the default state file path (for testing).</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+<div class="doc doc-object doc-attribute">
+
+
+
+<h4 id="defined_cli.state.store.StateStore.path" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">path</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-property"><code>property</code></small>
+  </span>
+
+<a href="#defined_cli.state.store.StateStore.path" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return the state file path.</p>
+
+    </div>
+
+</div>
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.state.store.StateStore.load" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">load</span><span class="p">()</span></code>
+
+<a href="#defined_cli.state.store.StateStore.load" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Load state from disk.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="StateSnapshot
+
+
+  
+      dataclass
+   (defined_cli.state.model.StateSnapshot)" href="#defined_cli.state.model.StateSnapshot">StateSnapshot</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The persisted snapshot, or a default <code>StateSnapshot</code></p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="StateSnapshot
+
+
+  
+      dataclass
+   (defined_cli.state.model.StateSnapshot)" href="#defined_cli.state.model.StateSnapshot">StateSnapshot</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>if the file does not exist.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="yaml.YAMLError">YAMLError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the file contains invalid YAML.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.state.store.StateStore.save" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">save</span><span class="p">(</span><span class="n">snapshot</span><span class="p">)</span></code>
+
+<a href="#defined_cli.state.store.StateStore.save" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Write state to disk atomically.</p>
+<p>Creates parent directories if needed. Writes to a temporary
+file in the same directory, then atomically replaces the
+target via <code>os.replace</code>.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="blackboard">Blackboard<a class="headerlink" href="#blackboard" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="defined_cli.state.blackboard" class="doc doc-heading">
+            <code>blackboard</code>
+
+
+<a href="#defined_cli.state.blackboard" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+        <p>Spatial blackboard -- dot-path key-value store with POI semantics.</p>
+<p>The blackboard is the robot's spatial memory. POIs (Points of Interest)
+are first-class entries under <code>world.pois.*</code>, stored with three
+type tiers: constant, static, and dynamic.</p>
+
+
+<details class="usage" open>
+  <summary>Usage</summary>
+  <p>from defined_cli.state.blackboard import Blackboard</p>
+<p>bb = Blackboard()
+bb.set_poi("dock", (0.0, 0.0), poi_type="constant")
+bb.set_poi("kitchen", (1.5, 2.0))
+print(bb.get_poi("kitchen"))</p>
+</details>
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="defined_cli.state.blackboard.Blackboard" class="doc doc-heading">
+            <code>Blackboard</code>
+
+
+<a href="#defined_cli.state.blackboard.Blackboard" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Nested key-value store with dot-path access and POI convenience methods.</p>
+<p>Wraps a plain dict internally. All access goes through dot-path
+methods to enforce consistent structure.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>data</code>
+            </td>
+            <td>
+                  <code><span title="dict">dict</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Initial data dict (e.g. loaded from StateStore). Defaults to empty.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.state.blackboard.Blackboard.get" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span></code>
+
+<a href="#defined_cli.state.blackboard.Blackboard.get" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Get a value by dot-path.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>key</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Dot-separated path (e.g. <code>"world.pois.dock"</code>).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>default</code>
+            </td>
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Returned if the path does not exist.</p>
+              </div>
+            </td>
+            <td>
+                  <code>None</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The value at the path, or <em>default</em>.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.state.blackboard.Blackboard.set" class="doc doc-heading">
+            <code class="highlight language-python"><span class="nb">set</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span></code>
+
+<a href="#defined_cli.state.blackboard.Blackboard.set" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Set a value at a dot-path, creating intermediate dicts as needed.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>key</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Dot-separated path.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>value</code>
+            </td>
+            <td>
+                  <code><span title="typing.Any">Any</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Value to store.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.state.blackboard.Blackboard.delete" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">delete</span><span class="p">(</span><span class="n">key</span><span class="p">)</span></code>
+
+<a href="#defined_cli.state.blackboard.Blackboard.delete" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Delete the value at a dot-path.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>key</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Dot-separated path to delete (e.g. <code>"world.pois.dock"</code>).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+<p><span class="doc-section-title">Raises:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="KeyError">KeyError</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>If the path does not exist.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.state.blackboard.Blackboard.list" class="doc doc-heading">
+            <code class="highlight language-python"><span class="nb">list</span><span class="p">(</span><span class="n">prefix</span><span class="p">)</span></code>
+
+<a href="#defined_cli.state.blackboard.Blackboard.list" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return all children under a dot-path prefix.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>prefix</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Dot-separated path to a dict node.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>The dict at <em>prefix</em>, or an empty dict if the path does not exist.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.state.blackboard.Blackboard.set_poi" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">set_poi</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">radius</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">poi_type</span><span class="o">=</span><span class="s1">&#39;static&#39;</span><span class="p">,</span> <span class="n">frame</span><span class="o">=</span><span class="s1">&#39;map&#39;</span><span class="p">)</span></code>
+
+<a href="#defined_cli.state.blackboard.Blackboard.set_poi" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Add or update a Point of Interest.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>name</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>POI identifier (e.g. <code>"kitchen"</code>).</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>center</code>
+            </td>
+            <td>
+                  <code><span title="dict">dict</span> | <span title="tuple">tuple</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p><code>(x, y)</code> tuple or <code>{"x": ..., "y": ...}</code> dict.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>radius</code>
+            </td>
+            <td>
+                  <code><span title="float">float</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Area radius in meters.</p>
+              </div>
+            </td>
+            <td>
+                  <code>0.5</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>poi_type</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>One of <code>"constant"</code>, <code>"static"</code>, <code>"dynamic"</code>.</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;static&#39;</code>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>frame</code>
+            </td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Coordinate frame (default <code>"map"</code>).</p>
+              </div>
+            </td>
+            <td>
+                  <code>&#39;map&#39;</code>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.state.blackboard.Blackboard.get_poi" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">get_poi</span><span class="p">(</span><span class="n">name</span><span class="p">)</span></code>
+
+<a href="#defined_cli.state.blackboard.Blackboard.get_poi" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return a POI dict by name, or <code>None</code> if not found.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.state.blackboard.Blackboard.list_pois" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">list_pois</span><span class="p">()</span></code>
+
+<a href="#defined_cli.state.blackboard.Blackboard.list_pois" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return all POIs as <code>{name: poi_dict}</code>.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.state.blackboard.Blackboard.clear" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">clear</span><span class="p">()</span></code>
+
+<a href="#defined_cli.state.blackboard.Blackboard.clear" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Remove all data from the blackboard, starting fresh.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.state.blackboard.Blackboard.clear_pois" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">clear_pois</span><span class="p">()</span></code>
+
+<a href="#defined_cli.state.blackboard.Blackboard.clear_pois" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Remove all POIs, preserving other blackboard data.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.state.blackboard.Blackboard.to_dict" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">to_dict</span><span class="p">()</span></code>
+
+<a href="#defined_cli.state.blackboard.Blackboard.to_dict" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Return a deep copy of the internal data for StateStore serialization.</p>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.state.blackboard.Blackboard.from_dict" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+<a href="#defined_cli.state.blackboard.Blackboard.from_dict" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Reconstruct a Blackboard from a plain dict.</p>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="state-models">State Models<a class="headerlink" href="#state-models" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="defined_cli.state.model" class="doc doc-heading">
+            <code>model</code>
+
+
+<a href="#defined_cli.state.model" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+        <p>State data models -- robot status, world state, and mission records.</p>
+<p>Pure data containers with no I/O, no CLI dependencies, and no side effects.
+Used by <code>StateStore</code> for persistence and <code>Blackboard</code> for spatial memory.</p>
+
+
+<details class="usage" open>
+  <summary>Usage</summary>
+  <p>from defined_cli.state.model import StateSnapshot, RobotStatus</p>
+<p>snapshot = StateSnapshot()
+snapshot.robot.current = RobotStatus.IDLE</p>
+</details>
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="defined_cli.state.model.RobotStatus" class="doc doc-heading">
+            <code>RobotStatus</code>
+
+
+<a href="#defined_cli.state.model.RobotStatus" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="enum.Enum">Enum</span></code></p>
+
+
+
+        <p>Robot lifecycle states.</p>
+
+
+<details class="transitions" open>
+  <summary>Transitions</summary>
+  <p>OFFLINE -&gt; IDLE -&gt; ON_MISSION -&gt; IDLE
+                  ON_MISSION -&gt; PAUSED -&gt; ON_MISSION | IDLE</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="defined_cli.state.model.RobotState" class="doc doc-heading">
+            <code>RobotState</code>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-dataclass"><code>dataclass</code></small>
+  </span>
+
+<a href="#defined_cli.state.model.RobotState" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Current robot status and last mission metadata.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.state.model.RobotState.current">current</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="RobotStatus (defined_cli.state.model.RobotStatus)" href="#defined_cli.state.model.RobotStatus">RobotStatus</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Active lifecycle state.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.state.model.RobotState.last_mission_id">last_mission_id</span></code></td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>ID of the most recently completed mission.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.state.model.RobotState.last_mission_result">last_mission_result</span></code></td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Outcome of the last mission (SUCCESS, FAILURE, ABORTED).</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="defined_cli.state.model.WorldState" class="doc doc-heading">
+            <code>WorldState</code>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-dataclass"><code>dataclass</code></small>
+  </span>
+
+<a href="#defined_cli.state.model.WorldState" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Spatial world model -- POIs keyed by name.</p>
+<p>Each POI value is a plain dict:
+<code>{"center": {"x": ..., "y": ...}, "radius": ..., "type": ..., "frame": ...}</code></p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.state.model.WorldState.pois">pois</span></code></td>
+            <td>
+                  <code><span title="dict">dict</span>[<span title="str">str</span>, <span title="dict">dict</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Map of POI name to spatial entity dict.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="defined_cli.state.model.MissionRecord" class="doc doc-heading">
+            <code>MissionRecord</code>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-dataclass"><code>dataclass</code></small>
+  </span>
+
+<a href="#defined_cli.state.model.MissionRecord" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Completed or in-progress mission metadata.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.state.model.MissionRecord.id">id</span></code></td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Unique mission identifier.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.state.model.MissionRecord.task_name">task_name</span></code></td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Name from the task YAML.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.state.model.MissionRecord.status">status</span></code></td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>One of PENDING, RUNNING, SUCCESS, FAILURE, ABORTED.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.state.model.MissionRecord.started_at">started_at</span></code></td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>ISO 8601 timestamp, or None if not yet started.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.state.model.MissionRecord.completed_at">completed_at</span></code></td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>ISO 8601 timestamp, or None if not yet finished.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.state.model.MissionRecord.result">result</span></code></td>
+            <td>
+                  <code><span title="str">str</span> | None</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Human-readable result summary.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="defined_cli.state.model.StateSnapshot" class="doc doc-heading">
+            <code>StateSnapshot</code>
+
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-dataclass"><code>dataclass</code></small>
+  </span>
+
+<a href="#defined_cli.state.model.StateSnapshot" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+
+
+        <p>Full robot state -- persisted to <code>~/.defined/state.yaml</code>.</p>
+
+
+<p><span class="doc-section-title">Attributes:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.state.model.StateSnapshot.robot">robot</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="RobotState
+
+
+  
+      dataclass
+   (defined_cli.state.model.RobotState)" href="#defined_cli.state.model.RobotState">RobotState</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Current robot lifecycle state.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.state.model.StateSnapshot.world">world</span></code></td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="WorldState
+
+
+  
+      dataclass
+   (defined_cli.state.model.WorldState)" href="#defined_cli.state.model.WorldState">WorldState</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Spatial world model (POIs).</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.state.model.StateSnapshot.mission_queue">mission_queue</span></code></td>
+            <td>
+                  <code><span title="list">list</span>[<span title="dict">dict</span>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>FIFO queue of pending mission dicts.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.state.model.StateSnapshot.mission_history">mission_history</span></code></td>
+            <td>
+                  <code><span title="list">list</span>[<a class="autorefs autorefs-internal" title="MissionRecord
+
+
+  
+      dataclass
+   (defined_cli.state.model.MissionRecord)" href="#defined_cli.state.model.MissionRecord">MissionRecord</a>]</code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Completed mission records.</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td><code><span title="defined_cli.state.model.StateSnapshot.schema_version">schema_version</span></code></td>
+            <td>
+                  <code><span title="str">str</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>State file format version for future migrations.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.state.model.StateSnapshot.to_dict" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">to_dict</span><span class="p">()</span></code>
+
+<a href="#defined_cli.state.model.StateSnapshot.to_dict" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Serialize to a plain dict suitable for <code>yaml.dump</code>.</p>
+<p>Converts enums to their string values and dataclasses to
+plain dicts for YAML serialization.</p>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A plain dict with no dataclass or enum instances.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h4 id="defined_cli.state.model.StateSnapshot.from_dict" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
+
+  <span class="doc doc-labels">
+      <small class="doc doc-label doc-label-classmethod"><code>classmethod</code></small>
+  </span>
+
+<a href="#defined_cli.state.model.StateSnapshot.from_dict" class="headerlink" title="Permanent link">&para;</a></h4>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Reconstruct from a YAML-loaded dict. Missing keys use defaults.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>data</code>
+            </td>
+            <td>
+                  <code><span title="dict">dict</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Plain dict, typically from <code>yaml.safe_load</code>.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="StateSnapshot
+
+
+  
+      dataclass
+   (defined_cli.state.model.StateSnapshot)" href="#defined_cli.state.model.StateSnapshot">StateSnapshot</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>A populated <code>StateSnapshot</code>.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+  </div>
+
+    </div>
+
+</div><h2 id="world-loader">World Loader<a class="headerlink" href="#world-loader" title="Permanent link">&para;</a></h2>
+
+
+<div class="doc doc-object doc-module">
+
+
+
+<h2 id="defined_cli.state.world_loader" class="doc doc-heading">
+            <code>world_loader</code>
+
+
+<a href="#defined_cli.state.world_loader" class="headerlink" title="Permanent link">&para;</a></h2>
+
+    <div class="doc doc-contents first">
+
+        <p>World definition loader and blackboard seeding.</p>
+<p>Loads <code>world.yaml</code> and populates the spatial blackboard with POIs.
+This module has zero CLI-specific imports (no click, rich, textual).</p>
+
+
+<details class="usage" open>
+  <summary>Usage</summary>
+  <p>from defined_cli.state.world_loader import load_world, seed_blackboard
+from defined_cli.state.blackboard import Blackboard</p>
+<p>world = load_world(Path("world.yaml"))
+bb = Blackboard()
+seed_blackboard(world, bb)</p>
+</details>
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="defined_cli.state.world_loader.POIDefinition" class="doc doc-heading">
+            <code>POIDefinition</code>
+
+
+<a href="#defined_cli.state.world_loader.POIDefinition" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="pydantic.BaseModel">BaseModel</span></code></p>
+
+
+
+        <p>A Point of Interest in the world definition.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="defined_cli.state.world_loader.SpawnPosition" class="doc doc-heading">
+            <code>SpawnPosition</code>
+
+
+<a href="#defined_cli.state.world_loader.SpawnPosition" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="pydantic.BaseModel">BaseModel</span></code></p>
+
+
+
+        <p>Robot spawn position for simulation.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="defined_cli.state.world_loader.SimEnvironment" class="doc doc-heading">
+            <code>SimEnvironment</code>
+
+
+<a href="#defined_cli.state.world_loader.SimEnvironment" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="pydantic.BaseModel">BaseModel</span></code></p>
+
+
+
+        <p>Simulation environment configuration.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="defined_cli.state.world_loader.ZoneDefinition" class="doc doc-heading">
+            <code>ZoneDefinition</code>
+
+
+<a href="#defined_cli.state.world_loader.ZoneDefinition" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="pydantic.BaseModel">BaseModel</span></code></p>
+
+
+
+        <p>A zone boundary (parsed but not enforced in v0.1.0).</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h3 id="defined_cli.state.world_loader.WorldDefinition" class="doc doc-heading">
+            <code>WorldDefinition</code>
+
+
+<a href="#defined_cli.state.world_loader.WorldDefinition" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+            <p class="doc doc-class-bases">
+              Bases: <code><span title="pydantic.BaseModel">BaseModel</span></code></p>
+
+
+
+        <p>Complete world definition from world.yaml.</p>
+
+
+
+
+
+
+
+
+
+
+
+<div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="defined_cli.state.world_loader.load_world" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">load_world</span><span class="p">(</span><span class="n">path</span><span class="p">)</span></code>
+
+<a href="#defined_cli.state.world_loader.load_world" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Parse and validate a world.yaml file.</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>path</code>
+            </td>
+            <td>
+                  <code><span title="pathlib.Path">Path</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Path to the world.yaml file.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    <p><span class="doc-section-title">Returns:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="WorldDefinition (defined_cli.state.world_loader.WorldDefinition)" href="#defined_cli.state.world_loader.WorldDefinition">WorldDefinition</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Validated WorldDefinition.</p>
+              </div>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+<h3 id="defined_cli.state.world_loader.seed_blackboard" class="doc doc-heading">
+            <code class="highlight language-python"><span class="n">seed_blackboard</span><span class="p">(</span><span class="n">world</span><span class="p">,</span> <span class="n">blackboard</span><span class="p">)</span></code>
+
+<a href="#defined_cli.state.world_loader.seed_blackboard" class="headerlink" title="Permanent link">&para;</a></h3>
+
+
+    <div class="doc doc-contents ">
+
+        <p>Populate blackboard with POIs from a world definition.</p>
+<p>POIs are added via <code>Blackboard.set_poi()</code>, which handles the
+conversion to the internal format (center, radius, type, frame).
+Existing POIs in the blackboard are preserved (merge, not replace).</p>
+
+
+<p><span class="doc-section-title">Parameters:</span></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Default</th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="doc-section-item">
+            <td>
+                <code>world</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="WorldDefinition (defined_cli.state.world_loader.WorldDefinition)" href="#defined_cli.state.world_loader.WorldDefinition">WorldDefinition</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Parsed world definition.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+            <td>
+                <code>blackboard</code>
+            </td>
+            <td>
+                  <code><a class="autorefs autorefs-internal" title="Blackboard (defined_cli.state.blackboard.Blackboard)" href="#defined_cli.state.blackboard.Blackboard">Blackboard</a></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>Blackboard to populate.</p>
+              </div>
+            </td>
+            <td>
+                <em>required</em>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+
+
+    </div>
+
+</div>
+
+
+
+  </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

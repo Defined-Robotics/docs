@@ -1,0 +1,1783 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the Defined Robotics platform">
+      
+      
+      
+        <link rel="canonical" href="https://docs.definedrobotics.com/architecture/overview/">
+      
+      
+        <link rel="prev" href="../../tutorials/custom-verb/">
+      
+      
+        <link rel="next" href="../../reference/api/rdf/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Overview - Defined Robotics Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CJetBrains+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <!-- Plausible Analytics -->
+  <script defer data-domain="docs.definedrobotics.com" src="https://analytics.cirrus.shreyasgokhale.com/js/script.js"></script>
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#architecture-overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Defined Robotics Docs" class="md-header__button md-logo" aria-label="Defined Robotics Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Defined Robotics Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/Defined-Robotics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Defined-Robotics
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Defined Robotics Docs" class="md-nav__button md-logo" aria-label="Defined Robotics Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Defined Robotics Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/Defined-Robotics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Defined-Robotics
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quickstart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quickstart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/rdf-schema/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    RDF Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/task-format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task Format
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/verb-authoring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Verb Authoring
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/world-system/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    World System
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorials
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorials
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/patrol-robot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Patrol Robot
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/starter-repo-walkthrough/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Starter Repo Walkthrough
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/custom-verb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Verb
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#three-compilable-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three Compilable Inputs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compile-time-vs-runtime-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compile-Time vs Runtime Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compile-Time vs Runtime Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-compile-time-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Compile-Time Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#package-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Package Responsibilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Package Responsibilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined-rdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        defined-rdf
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-compiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        defined-compiler
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        defined-cli
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        defined_platform
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-to-ros2-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI-to-ROS2 Connection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statestore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StateStore
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blackboard-3-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blackboard (3-Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poi-resolver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POI Resolver
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tui-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TUI Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    API
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/rdf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    defined-rdf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/compiler/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    defined-compiler
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/api/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    defined-cli
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/cli-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CLI Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#three-compilable-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three Compilable Inputs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compile-time-vs-runtime-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Compile-Time vs Runtime Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compile-Time vs Runtime Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#key-compile-time-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Compile-Time Rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#package-responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Package Responsibilities
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Package Responsibilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#defined-rdf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        defined-rdf
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-compiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        defined-compiler
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        defined-cli
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#defined_platform" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        defined_platform
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cli-to-ros2-connection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI-to-ROS2 Connection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        State Layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="State Layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#statestore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        StateStore
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blackboard-3-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blackboard (3-Layer)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#poi-resolver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        POI Resolver
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tui-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TUI Architecture
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="architecture-overview">Architecture Overview<a class="headerlink" href="#architecture-overview" title="Permanent link">&para;</a></h1>
+<p>Defined Robotics is a capability-first platform for autonomous robots. It decouples robot description, task authoring, and runtime execution into three independent layers that compose at compile time and runtime.</p>
+<h2 id="three-compilable-inputs">Three Compilable Inputs<a class="headerlink" href="#three-compilable-inputs" title="Permanent link">&para;</a></h2>
+<p>Every mission run requires three inputs:</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Format</th>
+<th>Describes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RDF</strong> (Robot Description Framework)</td>
+<td><code>robot.rdf.yaml</code></td>
+<td>What the robot is: hardware modules, capabilities, physical geometry</td>
+</tr>
+<tr>
+<td><strong>Task</strong></td>
+<td><code>tasks/patrol.task.yaml</code></td>
+<td>What the robot should do: a sequence of named verb steps</td>
+</tr>
+<tr>
+<td><strong>World</strong></td>
+<td>World model (POIs in <code>~/.defined/state.yaml</code>)</td>
+<td>Where it happens: named Points of Interest with coordinates</td>
+</tr>
+</tbody>
+</table>
+<p>These inputs are independent — the same task can run on different robots (if capabilities match), and the same robot can run different tasks without recompilation.</p>
+<h2 id="compile-time-vs-runtime-pipeline">Compile-Time vs Runtime Pipeline<a class="headerlink" href="#compile-time-vs-runtime-pipeline" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>graph TD
+    subgraph COMPILE["Compile Time"]
+        RDF["robot.rdf.yaml"] --&gt; RDF_PKG["defined-rdf&lt;br/&gt;&lt;small&gt;Parse YAML → Pydantic models&lt;br/&gt;Capability Registry&lt;/small&gt;"]
+        TASK["task.yaml"] --&gt; COMP_PKG["defined-compiler&lt;br/&gt;&lt;small&gt;1. Parse task&lt;br/&gt;2. Expand verbs&lt;br/&gt;3. Gate capabilities&lt;br/&gt;4. Render Jinja2&lt;/small&gt;"]
+        WORLD["world (POIs)"] --&gt; RESOLVER["mission/resolver.py&lt;br/&gt;&lt;small&gt;Expand $world.pois.X&lt;br/&gt;→ concrete (x, y)&lt;/small&gt;"]
+        RDF_PKG --&gt; COMP_PKG
+        RESOLVER --&gt; COMP_PKG
+        COMP_PKG --&gt; XML["task.bt.xml"]
+    end
+
+    subgraph RUNTIME["Runtime"]
+        CLI["defined-cli&lt;br/&gt;&lt;small&gt;DefinedSession&lt;/small&gt;"] --&gt;|"WebSocket :9090"| BRIDGE["rosbridge"]
+        CLI --&gt;|"XML"| EXECUTOR["defined_runtime&lt;br/&gt;&lt;small&gt;BT.CPP executor&lt;/small&gt;"]
+        EXECUTOR --&gt;|"events"| CLI
+        EXECUTOR --&gt; NAV2["Nav2 + Gazebo/hardware"]
+    end
+
+    XML --&gt; CLI
+
+    style COMPILE fill:#1a2332,stroke:#2dd4bf,color:#e6edf3
+    style RUNTIME fill:#1a2332,stroke:#3b82f6,color:#e6edf3</code></pre>
+<h3 id="key-compile-time-rules">Key Compile-Time Rules<a class="headerlink" href="#key-compile-time-rules" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Capability gating is <strong>compile-time only</strong> (for v0.1.0). If a task requires <code>differential_drive</code> but the robot's RDF doesn't declare it, compilation fails immediately with a clear error.</li>
+<li><code>$world.pois.dock</code> references in task YAML are resolved to concrete <code>(x, y)</code> coordinates before BT XML is emitted. There are no runtime POI lookups.</li>
+<li>The compiler output is a self-contained BT XML file — it has no dependency on the RDF or task YAML at runtime.</li>
+</ul>
+<h2 id="package-responsibilities">Package Responsibilities<a class="headerlink" href="#package-responsibilities" title="Permanent link">&para;</a></h2>
+<h3 id="defined-rdf"><code>defined-rdf</code><a class="headerlink" href="#defined-rdf" title="Permanent link">&para;</a></h3>
+<p>Owns the robot description domain. Pure Python, no ROS2.</p>
+<ul>
+<li>Pydantic models for <code>Robot</code>, hardware modules, and capabilities</li>
+<li>YAML parser (<code>defined_rdf.parser.load</code>)</li>
+<li><code>CapabilityRegistry</code> for querying declared capabilities</li>
+<li><code>RobotConfig</code> dataclass for extracting sim/hardware config (DR-022 Phase 1)</li>
+</ul>
+<h3 id="defined-compiler"><code>defined-compiler</code><a class="headerlink" href="#defined-compiler" title="Permanent link">&para;</a></h3>
+<p>Owns YAML-to-BT-XML translation. Pure Python, no ROS2.</p>
+<ul>
+<li>Parses task YAML (<code>steps:</code> + <code>{verb:, params:}</code> schema)</li>
+<li>Resolves verb definitions from a three-tier lookup: local <code>verbs/</code> → built-in registry → future remote registry</li>
+<li>Gates each verb against <code>CapabilityRegistry</code></li>
+<li>Renders Jinja2 templates to produce BehaviorTree.CPP XML</li>
+</ul>
+<p>Depends on <code>defined-rdf</code> as a package dependency. Never imports ROS2 (DR-010).</p>
+<h3 id="defined-cli"><code>defined-cli</code><a class="headerlink" href="#defined-cli" title="Permanent link">&para;</a></h3>
+<p>Owns mission orchestration and the user interface. No ROS2 imports (DR-010).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>defined-cli
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── CLI Layer (Click)
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── Mission Control
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── DefinedSession     unified lifecycle API (connect, compile, deploy, monitor)
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   ├── Events             ConnectionStatus, MissionStatus, SessionEvent
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   └── POI Resolver       $world.pois.X expansion at compile time
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── State Layer
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   ├── StateStore         persists to ~/.defined/state.yaml
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   ├── Blackboard         dot-path KV store (3 layers)
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│   └── Models             RobotState, WorldState
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>├── Compiler Wrapper
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>├── Protocols
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│   ├── TargetBase         start/stop/status/resolve_xml_path
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│   └── TransportBase      connect/disconnect/send_task/subscribe_status
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>├── Implementations
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│   ├── SimTarget          manages Docker sim lifecycle
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│   └── RosbridgeTransport roslibpy WebSocket client
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>└── TUI (Textual)
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    ├── DefinedApp         shell + key bindings
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    ├── CommandBar         command parser (no TUI dep)
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    └── Panels: StatusBar, MissionPanel, WorldPanel, DiagnosticsPanel
+</code></pre></div>
+<h3 id="defined_platform"><code>defined_platform</code><a class="headerlink" href="#defined_platform" title="Permanent link">&para;</a></h3>
+<p>The only component that contains ROS2 code.</p>
+<ul>
+<li><code>defined_runtime</code>: BT.CPP executor (C++) — receives task XML, drives Nav2 actions</li>
+<li><code>defined_navigation</code>: Nav2 lifecycle manager, costmap config, planner/controller params</li>
+<li><code>defined_description</code>: URDF/xacro, parametric sensor inclusion (DR-022)</li>
+<li><code>defined_gazebo</code>: Gazebo Ionic world files, sensor plugins</li>
+<li><code>defined_bringup</code>: Launch files, rosbridge node, TF bridge</li>
+</ul>
+<p>Exposed to the rest of the platform only through rosbridge WebSocket and volume-mounted BT XML (DR-010).</p>
+<h2 id="visualization">Visualization<a class="headerlink" href="#visualization" title="Permanent link">&para;</a></h2>
+<p>The platform does not bundle its own visualization tool. Instead, the simulation stack exposes a <strong>Foxglove WebSocket bridge</strong> at <code>ws://localhost:8765</code>, and any compatible client can connect.</p>
+<p><a href="https://foxglove.dev/">Foxglove Studio</a> is the recommended viewer. It runs on macOS, Linux, and Windows with no ROS2 installation required. Connect to the WebSocket and you get live access to:</p>
+<ul>
+<li><strong>3D view</strong> — robot model, laser scan, costmap, navigation path</li>
+<li><strong>Map</strong> — SLAM-generated occupancy grid with robot pose</li>
+<li><strong>Topics</strong> — raw message inspection for any ROS2 topic exposed via the bridge</li>
+</ul>
+<p>Other options work too: <a href="https://github.com/Lichtblick-Suite/lichtblick">Lichtblick</a> (open-source fork), RViz (if you have a ROS2 install), or any rosbridge-compatible WebSocket client.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The Foxglove bridge runs inside the Docker container alongside rosbridge. Port <code>8765</code> is for Foxglove (visualization), port <code>9090</code> is for rosbridge (CLI control). Both are WebSocket — different protocols, different purposes.</p>
+</div>
+<h2 id="cli-to-ros2-connection">CLI-to-ROS2 Connection<a class="headerlink" href="#cli-to-ros2-connection" title="Permanent link">&para;</a></h2>
+<p>The host machine (macOS or Linux) never imports ROS2. All communication goes through <strong>rosbridge WebSocket</strong> at <code>ws://localhost:9090</code> (or a remote robot IP).</p>
+<pre class="mermaid"><code>graph LR
+    subgraph HOST["Host (macOS / Linux)"]
+        TRANSPORT["RosbridgeTransport&lt;br/&gt;&lt;small&gt;roslibpy.Ros()&lt;/small&gt;"]
+    end
+
+    subgraph DOCKER["Docker / Raspberry Pi"]
+        ROSBRIDGE["rosbridge_server&lt;br/&gt;&lt;small&gt;ws://localhost:9090&lt;/small&gt;"]
+        RUNTIME["defined_runtime"]
+        NAV2["Nav2"]
+        CAPS["capability_reporter&lt;br/&gt;&lt;small&gt;(Phase 2)&lt;/small&gt;"]
+    end
+
+    TRANSPORT --&gt;|"/task_file_path"| RUNTIME
+    RUNTIME --&gt;|"/mission_status"| TRANSPORT
+    NAV2 --&gt;|"/odom"| TRANSPORT
+    CAPS --&gt;|"/robot_capabilities"| TRANSPORT
+    TRANSPORT &lt;--&gt;|"WebSocket"| ROSBRIDGE
+
+    style HOST fill:#1a2332,stroke:#2dd4bf,color:#e6edf3
+    style DOCKER fill:#1a2332,stroke:#f59e0b,color:#e6edf3</code></pre>
+<p><code>roslibpy</code> (Python) handles all serialization. The host never needs <code>rclpy</code>, <code>colcon</code>, or a ROS2 installation.</p>
+<div class="admonition note">
+<p class="admonition-title">roslibpy threading</p>
+<p>roslibpy 2.0 requires all operations to use <code>callFromThread</code>. Subscriptions and publishes issued outside the reactor thread will silently fail. <code>RosbridgeTransport</code> handles this internally.</p>
+</div>
+<h2 id="state-layer">State Layer<a class="headerlink" href="#state-layer" title="Permanent link">&para;</a></h2>
+<p>The state layer is in <code>defined-cli</code> with <strong>zero imports</strong> from Click, Rich, or Textual, so it can be extracted to a <code>defined-core</code> package in Milestone 2.</p>
+<h3 id="statestore">StateStore<a class="headerlink" href="#statestore" title="Permanent link">&para;</a></h3>
+<p>Persists to <code>~/.defined/state.yaml</code> on every state transition. Atomic writes (write-then-rename).</p>
+<pre class="mermaid"><code>graph TD
+    subgraph STATE["~/.defined/state.yaml"]
+        ROBOT["robot:&lt;br/&gt;status: OFFLINE | IDLE | ON_MISSION | ERROR&lt;br/&gt;current_mission: task name | null"]
+        WORLD["world:&lt;br/&gt;pois:&lt;br/&gt;  name: {center, radius, type}"]
+        HISTORY["history: [MissionRecord, ...]"]
+    end
+
+    SESSION["DefinedSession"] --&gt;|"atomic write"| STATE
+
+    style STATE fill:#1a2332,stroke:#2dd4bf,color:#e6edf3</code></pre>
+<h3 id="blackboard-3-layer">Blackboard (3-Layer)<a class="headerlink" href="#blackboard-3-layer" title="Permanent link">&para;</a></h3>
+<p>The Blackboard is a dot-path key-value store with three namespaced layers:</p>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Namespace</th>
+<th>Lifetime</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Constant</strong></td>
+<td><code>$const.*</code></td>
+<td>Permanent</td>
+<td>Dock position, fixed infrastructure POIs</td>
+</tr>
+<tr>
+<td><strong>Static</strong></td>
+<td><code>$world.*</code></td>
+<td>Across missions</td>
+<td>Survey waypoints, named areas</td>
+</tr>
+<tr>
+<td><strong>Dynamic</strong></td>
+<td><code>$mission.*</code></td>
+<td>Single mission</td>
+<td>Current target, scan results, ephemeral state</td>
+</tr>
+</tbody>
+</table>
+<p>POIs are areas (center + radius), not points. They live in <code>world.pois.*</code>.</p>
+<h3 id="poi-resolver">POI Resolver<a class="headerlink" href="#poi-resolver" title="Permanent link">&para;</a></h3>
+<p><code>mission/resolver.py</code> walks the task YAML before compilation and substitutes <code>$world.pois.&lt;name&gt;</code> references with concrete <code>{x, y}</code> values from the Blackboard. This keeps the BT XML self-contained — no live POI lookups at runtime.</p>
+<h2 id="tui-architecture">TUI Architecture<a class="headerlink" href="#tui-architecture" title="Permanent link">&para;</a></h2>
+<p>The TUI is built on <a href="https://textual.textualize.io/">Textual</a> and launches when <code>defined</code> is run with no subcommand.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>DefinedApp (tui/defined_app.py)
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── StatusBar          connection status, robot status, mission name
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── MissionPanel       step-by-step mission progress with icons
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>├── WorldPanel         POI list with coordinates and types
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>└── DiagnosticsPanel   3-level detail: messages → suggestions → full trace
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    CommandBar         bottom bar: /run, /stop, /world add, etc.
+</code></pre></div>
+<p>Key bindings: <code>1</code>/<code>2</code>/<code>3</code> focus panels, <code>d</code> cycles diagnostics detail, <code>/</code> activates command bar, <code>q</code> quits.</p>
+<p><strong>CommandBar</strong> (<code>tui/command_bar.py</code>) is pure Python with no Textual imports — it parses command strings and returns structured command objects. This makes it testable without a running TUI.</p>
+<p>The TUI connects to <code>DefinedSession</code> via an observer pattern. Session events (<code>ConnectionStatus</code>, <code>MissionStatus</code>, <code>SessionEvent</code>) are emitted from background threads and consumed by the TUI on the Textual event loop via <code>app.call_from_thread</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
